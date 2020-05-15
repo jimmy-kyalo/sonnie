@@ -1,0 +1,15 @@
+{% extends "sonnie_app/base.html" %}
+
+{% block content %}
+
+	<p><a href="{% url 'sonnie_app:recipe' recipe.id %}">{{ recipe }}</a></p>
+
+	<p>Add a new entry:</p>
+
+	<form action="{% url 'sonnie_app:new_entry' recipe.id %}" method='post'>
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button name="submit">add entry</button>
+	</form>
+
+{% endblock content%}

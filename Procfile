@@ -1,0 +1,1 @@
+web: gunicorn sonnie.wsgi --log-file -

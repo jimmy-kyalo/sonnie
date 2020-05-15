@@ -1,0 +1,23 @@
+{% extends "sonnie_app/base.html" %}
+
+{% block header %}
+	<h1>Recipe</h1>
+{% endblock header %}
+
+{% block content %}
+
+	<ul>
+		{% for recipe in recipes %}
+			<li>
+				<h3>
+					<a href="{% url 'sonnie_app:recipe' recipe.id %}">{{ recipe }}</a>
+				</h3>
+			</li>
+		{% empty %}
+			<li>No recipes have been specified</li>
+		{% endfor %}
+	</ul>
+
+	<h3><a href="{% url 'sonnie_app:new_recipe' %}">Add a new recipe</a></h3>
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "sonnie_app/base.html" %}
+
+{% block header %}
+	<div class='jumbotron'>
+		<h2>Track your favorite recipes. Access them from any place on Earth</h2>
+	</div>
+{% endblock header %}
+
+{% block content %}
+	<h3>
+		<a href="{% url 'users:register' %}"><strong>Register an account</strong></a> 
+	</h3>
+	<h3>
+		<a href="{% url 'users:login' %}">Log in</a> to view your recipes , edit them and note down any new recipe you've picked up.
+	</h3>
+	
+{% endblock content %}
